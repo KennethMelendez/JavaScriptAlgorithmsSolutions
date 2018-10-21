@@ -73,12 +73,12 @@ function findLongestWordLength(str) {
 
 findLongestWordLength("The quick brown fox jumped over the lazy dog");
 
-/*
+/*==============================================================================================
     Return an array consisting of the largest number from each 
     provided sub-array. For simplicity, the provided array will contain exactly 4 sub-arrays.
     Remember, you can iterate through an array with a simple for loop, and access each member 
     with array syntax arr[i].   
-*/
+=============================================================================================*/
 
 function largestOfFour(arr) {
   let largestNumbersArray = new Array();
@@ -101,3 +101,18 @@ largestOfFour([
   [32, 35, 37, 39],
   [1000, 1001, 857, 1]
 ]);
+
+/*==============================================================================================
+    Check if a string (first argument, str) ends with the given target string (second argument, target).
+    This challenge can be solved with the .endsWith() method, which was introduced in 
+    ES2015. But for the purpose of this challenge, we would like you to use 
+    one of the JavaScript substring methods instead.
+==============================================================================================*/
+
+function confirmEnding(str, target) {
+    let endStr = str.substring(str.split('').length - target.length);
+    console.log(endStr);
+    return endStr === target;
+ }
+ 
+ confirmEnding("Bastian", "n");
