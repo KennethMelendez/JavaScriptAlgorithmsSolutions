@@ -39,18 +39,17 @@ Only integers greater than or equal to zero will be supplied to the function.
 ====================================================*/
 
 function factorialize(num) {
-    let multiplier = 1;
-    let result = 1;
-  
-    while(multiplier <= num){
-      result*=multiplier;
-      multiplier++;
-    }
-    return result;
-  }
-  
-  factorialize(5);
+  let multiplier = 1;
+  let result = 1;
 
+  while (multiplier <= num) {
+    result *= multiplier;
+    multiplier++;
+  }
+  return result;
+}
+
+factorialize(5);
 
 /*=======================================================================
     Return the length of the longest word in the provided sentence.
@@ -73,3 +72,32 @@ function findLongestWordLength(str) {
 }
 
 findLongestWordLength("The quick brown fox jumped over the lazy dog");
+
+/*
+    Return an array consisting of the largest number from each 
+    provided sub-array. For simplicity, the provided array will contain exactly 4 sub-arrays.
+    Remember, you can iterate through an array with a simple for loop, and access each member 
+    with array syntax arr[i].   
+*/
+
+function largestOfFour(arr) {
+  let largestNumbersArray = new Array();
+
+  arr.forEach(childArray => {
+    let currentLargeNum = childArray[0];
+    childArray.forEach(num => {
+      if (num >= currentLargeNum) {
+        currentLargeNum = num;
+      }
+    });
+    largestNumbersArray.push(currentLargeNum);
+  });
+  return largestNumbersArray;
+}
+
+largestOfFour([
+  [4, 5, 1, 3],
+  [13, 27, 18, 26],
+  [32, 35, 37, 39],
+  [1000, 1001, 857, 1]
+]);
