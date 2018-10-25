@@ -131,3 +131,28 @@ function repeatStringNumTimes(str, num) {
 }
 
 repeatStringNumTimes("abc", 3);
+
+/*==============================================================================================
+  Truncate a string (first argument) if it is longer than the given
+  maximum string length (second argument). Return the truncated string with a ... ending.
+==============================================================================================*/
+
+function truncateString(str, num) {
+  // Clear out that junk in your trunk
+  let letters = str.split("");
+  let truncated = new Array();
+  for (let x = 0; x <= num - 1; x++) {
+    truncated.push(letters[x]);
+    if (x >= letters.length - 1) {
+      break;
+    }
+  }
+  if (letters.length != truncated.length) {
+    truncated.push("...");
+  }
+  let result = truncated.join("");
+  console.log(result);
+  return result;
+}
+
+truncateString("A-tisket a-tasket A green and yellow basket", 8);
