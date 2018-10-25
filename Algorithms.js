@@ -110,11 +110,24 @@ largestOfFour([
 ========================================================================================================*/
 
 function confirmEnding(str, target) {
-    let endStr = str.substring(str.split('').length - target.length);
-    console.log(endStr);
-    return endStr === target;
- }
- 
- confirmEnding("Bastian", "n");
+  let endStr = str.substring(str.split("").length - target.length);
+  console.log(endStr);
+  return endStr === target;
+}
 
- //
+confirmEnding("Bastian", "n");
+
+/*================================================================================
+  Repeat a given string str (first argument) for num times 
+  (second argument). Return an empty string if num is not a positive number.
+ ===============================================================================*/
+
+function repeatStringNumTimes(str, num) {
+  let result = "";
+  for (let x = 1; x <= num; x++) {
+    result += str;
+  }
+  return result;
+}
+
+repeatStringNumTimes("abc", 3);
